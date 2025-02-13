@@ -1,0 +1,16 @@
+{
+  "name": "@z1/api",
+  "private": true,
+  "scripts": {
+    "dev": "supabase start",
+    "login": "supabase login",
+    "migrate": "supabase migration up",
+    "seed": "supabase db seed generate && supabase db seed run",
+    "reset": "supabase db reset",
+    "types": "supabase gen types --lang=typescript --local --schema public > ../../packages/supabase/src/types/db.ts",
+    "stop": "supabase stop"
+  },
+  "dependencies": {
+    "supabase": "^1.191.3"
+  }
+}

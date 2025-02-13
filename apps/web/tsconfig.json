@@ -1,0 +1,12 @@
+{
+  "extends": "@z1/typescript/start.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./app/*"]
+    },
+    "strict": true
+  },
+  "include": ["env.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
+}

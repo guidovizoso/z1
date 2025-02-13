@@ -1,0 +1,5 @@
+{
+  "extends": "@z1/typescript/base.json",
+  "include": ["."],
+  "exclude": ["node_modules"]
+}

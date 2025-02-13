@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Start",
+  "extends": "./base.json",
+  "compilerOptions": {
+    "plugins": [{ "name": "start" }],
+    "jsx": "react-jsx",
+    "moduleResolution": "Bundler",
+    "module": "ES2020",
+    "strictNullChecks": true
+  }
+}

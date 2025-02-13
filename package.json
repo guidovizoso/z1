@@ -1,0 +1,47 @@
+{
+  "name": "z1",
+  "version": "0.1.0",
+  "author": "Guido Vizoso <hi@gvizo.so>",
+  "devDependencies": {
+    "@biomejs/biome": "1.8.3",
+    "@t3-oss/env-core": "^0.12.0",
+    "turbo": "2.1.1",
+    "typescript": "^5.5.4"
+  },
+  "packageManager": "bun@1.1.26",
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "clean": "git clean -xdf node_modules",
+    "clean:workspaces": "turbo clean",
+    "dev": "turbo dev --parallel",
+    "dev:web": "turbo dev --filter=@z1/web",
+    "dev:app": "turbo dev --filter=@z1/app",
+    "dev:jobs": "turbo jobs --filter=@z1/jobs",
+    "start:web": "turbo start --filter=@z1/web",
+    "start:app": "turbo start --filter=@z1/app",
+    "sb:dev": "turbo run dev --filter=@z1/api",
+    "sb:migrate": "turbo run migrate --filter=@z1/api",
+    "sb:seed": "turbo run seed --filter=@z1/api",
+    "sb:types": "turbo run types --filter=@z1/api",
+    "sb:reset": "turbo run reset --filter=@z1/api",
+    "sb:stop": "turbo run stop --filter=@z1/api",
+    "test": "turbo test --parallel",
+    "format": "biome format --write .",
+    "lint": "turbo lint && bun lint:repo",
+    "lint:repo": "bunx sherif@latest",
+    "lint:repo:fix": "bunx sherif@latest --fix",
+    "typecheck": "turbo typecheck"
+  },
+  "workspaces": ["packages/*", "apps/*", "tooling/*"],
+  "trustedDependencies": [
+    "@biomejs/biome",
+    "@parcel/watcher",
+    "@sentry/cli",
+    "esbuild",
+    "msw",
+    "protobufjs",
+    "sharp",
+    "supabase"
+  ]
+}
